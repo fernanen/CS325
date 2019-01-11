@@ -25,6 +25,6 @@ for line in myfile:
     for number in dataset.split():
         insertionSort(sortedList,number)
     with open('insert.txt', 'w') as f:
-    for item in sortedList:
-        f.write("%s\n" % item)
-    f.write("\n")
+        for item in sortedList:
+            f.write("%s\n" % item)
+        f.write("\n")
