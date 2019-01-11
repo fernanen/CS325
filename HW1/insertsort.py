@@ -7,12 +7,12 @@ def insertionSort(dataArray, numToAdd):
     if counter <= 0:
         return dataArray
     else:
-    while dataArray[counter] < dataArray[counter-1]:
-        tempValStore = dataArray[counter]
-        dataArray[counter] = dataArray[counter-1]
-        dataArray[counter-1] = tempValStore
-        counter = counter-1
-    return dataArray
+        while dataArray[counter] < dataArray[counter-1]:
+            tempValStore = dataArray[counter]
+            dataArray[counter] = dataArray[counter-1]
+            dataArray[counter-1] = tempValStore
+            counter = counter-1
+        return dataArray
 
 fileLocation = os.getcwd() + "/data.txt"
 print fileLocation
