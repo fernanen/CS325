@@ -23,7 +23,7 @@ for line in myfile:
     dataset = line.split(' ',1)[1]
     print "numbers in the set: " + numset + "dataset: " + dataset  
     sortedList = []
-    for number in dataset.split(''):
+    for number in dataset.split():
         insertionSort(sortedList,numToAdd)
     print "line done"
 print"done"
