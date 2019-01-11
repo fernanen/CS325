@@ -24,7 +24,7 @@ for line in myfile:
     sortedList = []
     for number in dataset.split():
         insertionSort(sortedList,number)
-    with open('insert.txt', 'a+') as f:
+    with open('insert.txt',"a+") as resultFile:
         for item in sortedList:
-            f.write("%s " % item)
-        f.write("\n")
+            resultFile.write("%s " % item)
+        resu.write("\n")
