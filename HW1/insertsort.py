@@ -7,7 +7,7 @@ def insertionSort(dataArray, numToAdd):
     if counter <= 0:
         return dataArray
     else:
-        while dataArray[counter] < dataArray[counter-1]:
+        while dataArray[counter] < dataArray[counter-1] and counter > 0:
             tempValStore = dataArray[counter]
             dataArray[counter] = dataArray[counter-1]
             dataArray[counter-1] = tempValStore
@@ -21,9 +21,6 @@ counter = 1
 for line in myfile:
     numset = line.split(' ',1)[0]
     dataset = line.split(' ',1)[1]
-    print "numbers in the set: " + numset + "dataset: " + dataset  
     sortedList = []
     for number in dataset.split():
         insertionSort(sortedList,number)
-    print "line done"
-print"done"
