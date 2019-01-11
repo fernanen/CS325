@@ -7,7 +7,7 @@ counter = 1
 for line in myfile:
     numset = line.split(' ',1)[0]
     dataset = line.split(' ',1)[1]
-    print "numbers in the set: " + numset + "dataset:" dataset  
+    print "numbers in the set: " + numset + "dataset: " + dataset  
     for number in dataset.split()
         print number
     print "line done"
