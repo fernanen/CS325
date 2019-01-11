@@ -24,6 +24,6 @@ for line in myfile:
     print "numbers in the set: " + numset + "dataset: " + dataset  
     sortedList = []
     for number in dataset.split():
-        insertionSort(sortedList,numToAdd)
+        insertionSort(sortedList,number)
     print "line done"
 print"done"
