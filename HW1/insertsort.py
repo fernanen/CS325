@@ -2,5 +2,10 @@ import os
 fileLocation = os.getcwd() + "\data.txt"
 print fileLocation
 myfile = open(fileLocation,"r")
-print myfile
+counter = 1 
+for line in file: 
+    Print "Line " + counter:
+    for word in line: 
+        print word
+    print "Line " + counter + "over"
 print"done"
