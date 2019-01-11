@@ -27,4 +27,4 @@ for line in myfile:
     with open('insert.txt',"a+") as resultFile:
         for item in sortedList:
             resultFile.write("%s " % item)
-        resu.write("\n")
+        resultFile.write("\n")
