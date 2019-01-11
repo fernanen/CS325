@@ -4,7 +4,7 @@ print fileLocation
 myfile = open(fileLocation,"r")
 counter = 1 
 for line in file: 
-    Print "Line " + counter:
+    print "Line " + counter:
     for word in line: 
         print word
     print "Line " + counter + "over"
