@@ -29,8 +29,7 @@ def merge(array1, array2):
     else:
         new_array += array1
     return new_array
-size = 10
-time = 0.0 
+size = 10 
 for x in range(1,21): 
     dataset = []       
     for i in range(1,size):
