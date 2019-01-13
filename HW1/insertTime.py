@@ -15,15 +15,18 @@ def insertionSort(dataArray, numToAdd):
             counter = counter-1
         return dataArray
 
-    size = 10
-    sortedList
+size = 10
+result = 0.0
+while result < 30:
+    sortedList = []
     start = time.time() 
-    for i in size
+    for i in range (1,size):
         insertionSort(sortedList,random.randint(1,10000))
     end = time.time()
     result = end - start
-    with open('insert.txt',"a+") as resultFile:
-        for item in sortedList:
-            resultFile.write("%s " % size)
-            resultFile.write("%s " % result)
-        resultFile.write("\n")
+    resultFile = open('./insertTime.txt',"a+")
+    resultFile.write("%s " % size)
+    resultFile.write("%s " % result)
+    resultFile.write("\n")
+    resultFile.close()
+    size = size + 1000
