@@ -15,6 +15,7 @@ def merge(array1, array2):
     new_array = []
     array1_length = len(array1)
     array2_length = len(array2)
+    print "array1 length: {} content: {} array2 length: {} content {}".format(array1_length,array1,array2_length,array2)
     while array1_length != 0 and array2_length != 0:
         if array1[0] < array2[0]:
             new_array.append(array1.pop(0))
