@@ -19,8 +19,10 @@ def merge(array1, array2):
     while array1_length != 0 and array2_length != 0:
         if array1[0] < array2[0]:
             new_array.append(array1.pop(0))
+            array1_length = array1_length - 1 
         else:
             new_array.append(array2.pop(0))
+            array2_length = array2_length - 1
     if array1_length == 0:
         new_array += array2
     else:
