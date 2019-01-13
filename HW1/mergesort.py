@@ -33,7 +33,7 @@ for line in myfile:
     numset = line.split(' ',1)[0]
     dataset = line.split(' ',1)[1]
     for number in dataset.split():
-        sorted_list = merge_sort(sortedList)
+        sortedList = merge_sort(sortedList)
     with open('insert.txt',"a+") as resultFile:
         for item in sortedList:
             resultFile.write("%s " % item)
