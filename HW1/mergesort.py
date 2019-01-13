@@ -32,6 +32,7 @@ counter = 1
 for line in myfile:
     line_array = list(map(int, line.split()))
     dataset = line_array[1:]
+    print "Number of values: {} , dataset: {}" .format(len(dataset),dataset)
     sortedList = merge_sort(dataset)
     with open('insert.txt',"a+") as resultFile:
         for item in sortedList:
