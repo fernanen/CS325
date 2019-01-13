@@ -8,14 +8,14 @@ def merge_sort(dataset):
     array_split = array_size / 2
     num1 = merge_sort(dataset[:array_split])
     num2 = merge_sort(dataset[array_split:])
-    print "left: {} right: {}".format(num1,num2)
+    #print "left: {} right: {}".format(num1,num2)
     return merge(num1, num2)
 
 def merge(array1, array2):
     new_array = []
     array1_length = len(array1)
     array2_length = len(array2)
-    print "array1 length: {} content: {} array2 length: {} content {}".format(array1_length,array1,array2_length,array2)
+    #print "array1 length: {} content: {} array2 length: {} content {}".format(array1_length,array1,array2_length,array2)
     while array1_length != 0 and array2_length != 0:
         if array1[0] < array2[0]:
             new_array.append(array1.pop(0))
@@ -36,7 +36,7 @@ counter = 1
 for line in myfile:
     line_array = list(map(int, line.split()))
     dataset = line_array[1:]
-    print "Number of values: {} , dataset: {}" .format(len(dataset),dataset)
+    #print "Number of values: {} , dataset: {}" .format(len(dataset),dataset)
     sortedList = merge_sort(dataset)
     with open('merge.txt',"a+") as resultFile:
         for item in sortedList:
