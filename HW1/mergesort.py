@@ -30,10 +30,9 @@ print fileLocation
 myfile = open(fileLocation,"r")
 counter = 1 
 for line in myfile:
-    numset = line.split(' ',1)[0]
-    dataset = line.split(' ',1)[1]
-    for number in dataset.split():
-        sortedList = merge_sort(sortedList)
+    line_array = list(map(int, line.split()))
+    dataset = line_array[1:]
+    sortedList = merge_sort(dataset)
     with open('insert.txt',"a+") as resultFile:
         for item in sortedList:
             resultFile.write("%s " % item)
