@@ -80,10 +80,10 @@ for x in range(1,21):
         dataset.append(random.randint(1,10000))
     #print "Number of values: {} , dataset: {}" .format(len(dataset),dataset)
     start = time.time()
-    sortedList = merge_sort(dataset)
+    sortedList = four_way_merge_sort(dataset)
     end = time.time()
     result = end-start
-    resultFile = open('./mergeTime.txt',"a+")
+    resultFile = open('./merge4Time.txt',"a+")
     resultFile.write("%s " % size)
     resultFile.write("%s " % result)
     resultFile.write("\n")
