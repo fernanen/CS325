@@ -1,19 +1,26 @@
 import os
 import re
 
-def insertionSort(dataArray, numToAdd):
-    dataArray.append(numToAdd)
-    counter = (len(dataArray)-1)
-    if counter <= 0:
-        return dataArray
-    else:
-        while dataArray[counter] < dataArray[counter-1] and counter > 0:
-            tempValStore = dataArray[counter]
-            dataArray[counter] = dataArray[counter-1]
-            dataArray[counter-1] = tempValStore
-            counter = counter-1
-        return dataArray
+def shopping(itemList,capacity,itemToView,keyPairCap):
+    result = []
+    price = total = 0
+    weight = 0
 
+    if keyPairCap[itemToView][capacity] is not None:
+        return keyPairCap[itemToView][capacity]
+
+    if capacity == 0 or itemToView == 0:
+        result = [0,'']
+    
+    else if itemList[itemToView][weight] > capacity:
+        result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
+        
+    else:
+        tmp1 = shopping(itemList,capacity,itemToView,keyPairCap)
+        tmp2 =  shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
+        tmp2[totSum] = tmp2[total] + itemList[itemToView][price]
+        result = max(tmp1[total],tmp2[total])
+    return result
 
 price = 0
 weight = 1
