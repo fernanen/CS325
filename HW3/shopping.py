@@ -19,8 +19,11 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         tmp1 = shopping(itemList,capacity,itemToView,keyPairCap)
         tmp2 =  shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
         tmp2[totSum] = tmp2[total] + itemList[itemToView][price]
-        result = max(tmp1[total],tmp2[total])
-    return result
+        if tmp1[total] < tmp2[total]:
+            return tmp1
+        else:
+            return tmp2
+    
 
 price = 0
 weight = 1
