@@ -71,7 +71,7 @@ for cases in range(numcases):
     #store cases for dynamic programming application
     keyPairCap = [] * itemCount  
     for result in range(len(keyPairCap)):
-        itemList[item] = [] * cap
+        itemList[item] = [None] * cap
 
     for shopper in range(len(family)):
         finalShop = shopping(itemList,family[familyMember],numItems,keyPairCap)
