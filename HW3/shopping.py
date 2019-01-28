@@ -66,7 +66,7 @@ for cases in range(numcases):
         print("weight capacity: {}").format(family[familyMember])
 
     #let each member shop -- calling shopping method
-    cap = max[family] + 1
+    cap = max(family) + 1
     itemCount = len(itemList)
     #store cases for dynamic programming application
     keyPairCap = [] * itemCount  
