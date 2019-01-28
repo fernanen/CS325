@@ -7,6 +7,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     weight = 0
 
     if keyPairCap[itemToView][capacity] is not None:
+        print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
     if capacity == 0 or itemToView == 0:
