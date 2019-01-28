@@ -4,7 +4,7 @@ import re
 def shopping(itemList,capacity,itemToView,keyPairCap):
     result = []
     price = total = 0
-    weight = 1
+    weight = items = 1
 
     if keyPairCap[itemToView][capacity] is not None:
         print("capacity is not NONE")
@@ -12,6 +12,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
 
     if capacity == 0 or itemToView == 0:
         result = [0,'']
+        return result
     
     elif itemList[itemToView][weight] > capacity:
         result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
@@ -19,6 +20,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         tmp1 = shopping(itemList,capacity,(itemToView-1),keyPairCap)
         tmp2 =  shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
+        tmp2[items] = tmp2[items] + str(itemToView)
         if tmp1[total] < tmp2[total]:
             return tmp1
         else:
