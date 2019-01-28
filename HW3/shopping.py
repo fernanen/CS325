@@ -12,7 +12,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     if capacity == 0 or itemToView == 0:
         result = [0,'']
     
-    else if itemList[itemToView][weight] > capacity:
+    elif itemList[itemToView][weight] > capacity:
         result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
 
     else:
