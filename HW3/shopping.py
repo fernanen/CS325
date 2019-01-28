@@ -70,7 +70,7 @@ for cases in range(numcases):
     itemCount = len(itemList)
     #store cases for dynamic programming application
     keyPairCap = [] * itemCount  
-    for result in range(keyPairCap):
+    for result in range(len(keyPairCap)):
         itemList[item] = [] * cap
 
     for shopper in range(len(family)):
