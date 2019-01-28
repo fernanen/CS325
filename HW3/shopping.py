@@ -71,8 +71,8 @@ for cases in range(numcases):
     #store cases for dynamic programming application
     keyPairCap = [None] * itemCount  
     for result in range(len(keyPairCap)):
-        itemList[item] = [None] * cap
-    print ("{} x ").format(len(keyPairCap))
+        keyPairCap[result] = [None] * cap
+    print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
         finalShop = shopping(itemList,family[familyMember],numItems,keyPairCap)
         print("{}: total won:{} items:{}").format(shopper,finalShop[0],finalShop[1])
