@@ -79,7 +79,7 @@ for cases in range(numcases):
     print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
         finalShop = shopping(itemList,family[familyMember],numItems,keyPairCap)
-        print("{}: total won:{} items:{}").format(shopper,finalShop[0],finalShop[1])
+        print("{}: --{}--").format(shopper,finalShop)
     #
     #with open('results.txt',"a+") as resultFile:
     #    for item in sortedList:
