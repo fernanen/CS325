@@ -38,6 +38,7 @@ for cases in range(numcases):
         itemList[item][price] = itemInfo[price]
         itemList[item][weight] = itemInfo[weight]
     familySize = myfile.readline()
+    familySize = int(familySize)
     family = [0] * familySize
     for familyMember in range(familySize):
         family[familyMember] = myfile.readline()
