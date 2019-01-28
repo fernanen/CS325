@@ -39,12 +39,10 @@ for cases in range(numcases):
     family = [0] * familySize
     for familyMember in range(familySize):
         family[familyMember] = myfile.readline()
-    #find lowest common
-
-
-
-
-    with open('results.txt',"a+") as resultFile:
-        for item in sortedList:
-            resultFile.write("%s " % item)
-        resultFile.write("\n")
+    #
+    ##  
+    #
+    #with open('results.txt',"a+") as resultFile:
+    #    for item in sortedList:
+    #        resultFile.write("%s " % item)
+    #    resultFile.write("\n")
