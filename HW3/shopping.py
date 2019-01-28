@@ -69,7 +69,7 @@ for cases in range(numcases):
     cap = max(family) + 1
     itemCount = len(itemList)
     #store cases for dynamic programming application
-    keyPairCap = [] * itemCount  
+    keyPairCap = [None] * itemCount  
     for result in range(len(keyPairCap)):
         itemList[item] = [None] * cap
     print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
