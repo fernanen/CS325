@@ -24,9 +24,11 @@ print fileLocation
 myfile = open(fileLocation,"r")
 #read number of test cases
 numcases = myfile.readline()
+numcases = int(numcases)
 caseList = []
 for cases in range(numcases):
     numItems = myfile.readline()
+    numItems = int(numItems)
     itemList = [0] * numItems
 
     for item in range(numItems):
