@@ -47,7 +47,7 @@ for cases in range(numcases):
     for familyMember in range(familySize):
         family[familyMember] = myfile.readline()
         family[familyMember] = int(family[familyMember])
-        print("number of items: {}").format(family[familyMember])
+        print("weight capacity: {}").format(family[familyMember])
     #
     ##  
     #
