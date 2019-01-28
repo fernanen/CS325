@@ -67,6 +67,7 @@ for cases in range(numcases):
 
     #let each member shop -- calling shopping method
     cap = max(family) + 1
+    print ("max Size : {}").format(cap)
     itemCount = len(itemList)
     #store cases for dynamic programming application
     keyPairCap = [None] * itemCount  
