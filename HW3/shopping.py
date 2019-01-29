@@ -50,13 +50,13 @@ myfile = open(fileLocation,"r")
 #read number of test cases
 numcases = myfile.readline()
 numcases = int(numcases)
-print("number of cases: {}").format(numcases)
+#print("number of cases: {}").format(numcases)
 
 for cases in range(numcases):
     # Get number of items in each case
     numItems = myfile.readline()
     numItems = int(numItems)
-    print("number of items: {}").format(numItems)
+    #print("number of items: {}").format(numItems)
 
     #store item information
     itemList = [0] * (numItems+1)
@@ -66,12 +66,12 @@ for cases in range(numcases):
         itemInfo = list(map(int, itemLine.split()))
         itemList[item][price] = itemInfo[price]
         itemList[item][weight] = itemInfo[weight]
-        print("item price: {} item weight: {}").format( itemList[item][price], itemList[item][weight])
+        #print("item price: {} item weight: {}").format( itemList[item][price], itemList[item][weight])
     
     # get family size 
     familySize = myfile.readline()
     familySize = int(familySize)
-    print("family Size: {}").format(familySize)
+    #print("family Size: {}").format(familySize)
 
     #store family member capacity
     family = [0] * familySize
@@ -81,17 +81,17 @@ for cases in range(numcases):
     for familyMember in range(familySize):
         family[familyMember] = myfile.readline()
         family[familyMember] = int(family[familyMember])
-        print("weight capacity: {}").format(family[familyMember])
+        #print("weight capacity: {}").format(family[familyMember])
 
     #let each member shop -- calling shopping method
     cap = max(family) + 1
-    print ("max Size : {}").format(cap)
+    #print ("max Size : {}").format(cap)
     itemCount = len(itemList)
     #store cases for dynamic programming application
     keyPairCap = [None] * itemCount  
     for result in range(len(keyPairCap)):
         keyPairCap[result] = [None] * cap
-    print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
+    #print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
         finalShop = shopping(family[familyMember],numItems,keyPairCap)
         print("{}: --{}--").format(shopper,finalShop)
