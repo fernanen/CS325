@@ -8,14 +8,14 @@ def shopping(capacity,itemToView):
     global itemList
     global keyPairCap
     
-    print("capacity: {} itemtoview: {}").format(capacity,itemToView)
+    #print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
-        print("capacity is not NONE")
+        #print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
     if capacity <= 0 or itemToView <= 0:
         result = [0,""]
-        print("RETURNING BASE CASE")
+        #print("RETURNING BASE CASE")
         return result
     
     elif itemList[itemToView][weight] > capacity:
@@ -31,13 +31,13 @@ def shopping(capacity,itemToView):
             tmp1 = [0,""]
         else:
             tmp1 = shopping(capacity,(itemToView-1))
-        print("tmp1: {}").format(tmp1)
-        print("##############calling tmp2############")
+        #print("tmp1: {}").format(tmp1)
+        #print("##############calling tmp2############")
         if (itemToView-1) <= 0: 
             tmp2 = [0,""]
         else:
             tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1))
-        print("TMP2 : {}").format(tmp2)
+        #print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         #print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
@@ -45,10 +45,10 @@ def shopping(capacity,itemToView):
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         #print("tmp1 price: {} , tmp2 price {}").format(tmp1[price],tmp2[price]) 
         if tmp1[total] > tmp2[total]:
-            print ("returing tmp1 {}").format(tmp1)
+            #print ("returing tmp1 {}").format(tmp1)
             return tmp1
         else:
-            print("returning tmp2 {}").format(tmp2)
+            #print("returning tmp2 {}").format(tmp2)
             return tmp2
     
 
