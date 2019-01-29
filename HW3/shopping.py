@@ -101,7 +101,7 @@ for cases in range(numcases):
         keyPairCap[result] = [None] * cap
     #print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
-        finalShop = shopping(family[familyMember],numItems)
+        finalShop = shopping(family[shopper],numItems)
         print("SHOPPER {}").format(family[familyMember])
         print("{}: --{}--").format(shopper,finalShop)
     #
