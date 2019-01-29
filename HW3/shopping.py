@@ -1,11 +1,12 @@
 import os
 import re
 
-def shopping(capacity,itemToView,keyPairCap):
+def shopping(capacity,itemToView):
     result = []
     price = total = 0
     weight = items = 1
     global itemList
+    global keyPairCap
     
     print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
@@ -18,14 +19,14 @@ def shopping(capacity,itemToView,keyPairCap):
         return result
     
     elif itemList[itemToView][weight] > capacity:
-        result = shopping(capacity,(itemToView-1),keyPairCap)
+        result = shopping(capacity,(itemToView-1))
     else:
         #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1#############")
-        tmp1 = shopping(capacity,(itemToView-1),keyPairCap)
+        tmp1 = shopping(capacity,(itemToView-1))
         print("tmp1: {}").format(tmp1)
         print("##############calling tmp2############")
-        tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
+        tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1))
         print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
