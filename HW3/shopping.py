@@ -8,7 +8,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     
     print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
-        print("capacity is not NONE")
+        #print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
     if capacity == 0 or itemToView == 0:
@@ -19,19 +19,19 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
     else:
         tmp2=[]
-        print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
+        #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1###############3")
         tmp1 = shopping(itemList,capacity,(itemToView-1),keyPairCap)
         print("tmp1: {}").format(tmp1)
-        print("##############33calling tmp2############33")
+        print("##############calling tmp2############")
         tmp2 = shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
         print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
-        print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
-        print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
+        #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
+        #print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
         tmp2[items] = tmp2[items].join(str(itemToView))
-        print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
-        print("tmp1 price: {} , tmp2 price {}").format(tmp1[price],tmp2[price]) 
+        #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
+        #print("tmp1 price: {} , tmp2 price {}").format(tmp1[price],tmp2[price]) 
         if tmp1[total] < tmp2[total]:
             print ("returing tmp1")
             return tmp1
