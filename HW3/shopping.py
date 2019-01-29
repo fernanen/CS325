@@ -1,10 +1,11 @@
 import os
 import re
 
-def shopping(itemList,capacity,itemToView,keyPairCap):
+def shopping(capacity,itemToView,keyPairCap):
     result = []
     price = total = 0
     weight = items = 1
+    global itemList
     
     print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
@@ -16,14 +17,14 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         return result
     
     elif itemList[itemToView][weight] > capacity:
-        result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
+        result = shopping(capacity,(itemToView-1),keyPairCap)
     else:
-        #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
+        print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1###############3")
-        tmp1 = shopping(itemList,capacity,(itemToView-1),keyPairCap)
+        tmp1 = shopping(capacity,(itemToView-1),keyPairCap)
         print("tmp1: {}").format(tmp1)
         print("##############calling tmp2############")
-        tmp2 = shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
+        tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
         print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
@@ -92,7 +93,7 @@ for cases in range(numcases):
         keyPairCap[result] = [None] * cap
     print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
-        finalShop = shopping(itemList,family[familyMember],numItems,keyPairCap)
+        finalShop = shopping(family[familyMember],numItems,keyPairCap)
         print("{}: --{}--").format(shopper,finalShop)
     #
     #with open('results.txt',"a+") as resultFile:
