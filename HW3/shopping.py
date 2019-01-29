@@ -18,7 +18,6 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     elif itemList[itemToView][weight] > capacity:
         result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
     else:
-        tmp2=[]
         #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1###############3")
         tmp1 = shopping(itemList,capacity,(itemToView-1),keyPairCap)
@@ -32,11 +31,11 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         tmp2[items] = tmp2[items].join(str(itemToView))
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         #print("tmp1 price: {} , tmp2 price {}").format(tmp1[price],tmp2[price]) 
-        if tmp1[total] < tmp2[total]:
-            print ("returing tmp1")
+        if tmp1[total] > tmp2[total]:
+            print ("returing tmp1 {}").format(tmp1)
             return tmp1
         else:
-            print("returning tmp2")
+            print("returning tmp2 {}").format(tmp2)
             return tmp2
     
 
