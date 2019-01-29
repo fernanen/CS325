@@ -102,7 +102,7 @@ for cases in range(numcases):
     #print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
         finalShop = shopping(family[familyMember],numItems)
-        print("SHOPPER {}").format(shopper)
+        print("SHOPPER {}").format(family[familyMember])
         print("{}: --{}--").format(shopper,finalShop)
     #
     #with open('results.txt',"a+") as resultFile:
