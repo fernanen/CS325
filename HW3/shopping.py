@@ -27,7 +27,7 @@ def shopping(capacity,itemToView):
         tmp1 = shopping(capacity,(itemToView-1))
         print("tmp1: {}").format(tmp1)
         print("##############calling tmp2############")
-        if (itemToView-1) == 0: 
+        if (itemToView-1) <= 0: 
             tmp2 = [0,""]
         else:
             tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1))
