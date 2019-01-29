@@ -5,7 +5,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     result = []
     price = total = 0
     weight = items = 1
-
+    print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
         print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
