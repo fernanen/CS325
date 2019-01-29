@@ -63,7 +63,7 @@ numcases = int(numcases)
 resultFile = open('results.txt',"a+")
 
 for cases in range(numcases):
-    resultFile.write("Test Case " % (cases+1))
+    resultFile.write("Test Case %d " % (cases+1))
     resultFile.write("\n")
     # Get number of items in each case
     numItems = myfile.readline()
