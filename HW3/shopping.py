@@ -11,7 +11,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         return keyPairCap[itemToView][capacity]
 
     if capacity == 0 or itemToView == 0:
-        result = [0,'']
+        result = [0,""]
         return result
     
     elif itemList[itemToView][weight] > capacity:
@@ -22,7 +22,9 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         tmp2 =  shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
-        tmp2[items] = tmp2[items] + str(itemToView)
+        print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
+        tmp2[items] = tmp2[items].join(str(itemToView))
+        print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         if tmp1[total] < tmp2[total]:
             return tmp1
         else:
