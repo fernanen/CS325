@@ -14,7 +14,7 @@ def shopping(capacity,itemToView):
         #print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
-    if capacity <= 0 or itemToView <= 0 or itemToView >= len(itemList):
+    if capacity <= 0 or itemToView <= 0 or itemToView >= (len(itemList)):
         result = [0,""]
         #print("RETURNING BASE CASE")
         return result
