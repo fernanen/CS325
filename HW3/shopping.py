@@ -11,7 +11,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         #print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
-    if capacity == 0 or itemToView == 0:
+    if capacity <= 0 or itemToView <= 0:
         result = [0,""]
         return result
     
