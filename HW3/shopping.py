@@ -5,6 +5,7 @@ def shopping(capacity,itemToView):
     result = []
     price = total = 0
     weight = items = 1
+    difference = 1
     global itemList
     global keyPairCap
     
@@ -13,14 +14,14 @@ def shopping(capacity,itemToView):
         #print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
-    if capacity <= 0 or itemToView <= 0:
+    if capacity <= 0 or itemToView <= 0 or itemToView => len(itemList):
         result = [0,""]
         #print("RETURNING BASE CASE")
         return result
     
     elif itemList[itemToView][weight] > capacity:
         #print("capacity is less than weight")
-        result = shopping(capacity,(itemToView-1))
+        result = shopping(capacity,(itemToView + difference))
         return result
     
     else:
@@ -30,13 +31,13 @@ def shopping(capacity,itemToView):
         if (itemToView) <= 0: 
             tmp1 = [0,""]
         else:
-            tmp1 = shopping(capacity,(itemToView-1))
+            tmp1 = shopping(capacity,(itemToView + difference))
         #print("tmp1: {}").format(tmp1)
         #print("##############calling tmp2############")
         if (itemToView-1) <= 0: 
             tmp2 = [0,""]
         else:
-            tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1))
+            tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView + difference))
         #print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
