@@ -65,6 +65,7 @@ resultFile = open('results.txt',"a+")
 for cases in range(numcases):
     resultFile.write("Test Case %s " % (cases+1))
     resultFile.write("\n")
+
     # Get number of items in each case
     numItems = myfile.readline()
     numItems = int(numItems)
@@ -95,18 +96,24 @@ for cases in range(numcases):
 
     #let each member shop -- calling shopping method
     cap = max(family) + 1
+    
     #print ("max Size : {}").format(cap)
     itemCount = len(itemList)
+    
     #store cases for dynamic programming application
     keyPairCap = [None] * itemCount  
     for result in range(len(keyPairCap)):
         keyPairCap[result] = [None] * cap
+    
     #print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     result = [None] * familySize
+    totalFam = 0
     for shopper in range(len(family)):
         result[shopper] = shopping(family[shopper],numItems)
-        print("SHOPPER {}").format(family[familyMember])
-        print("{}: --{}--").format(shopper,result[shopper])
+        totalFam += result[shopper][price]
+        #print("SHOPPER {}").format(family[familyMember])
+        #print("{}: --{}--").format(shopper,result[shopper])
+    print ("Total Price %s" % totalFam)
     #
     #with open('results.txt',"a+") as resultFile:
     #    for item in sortedList:
