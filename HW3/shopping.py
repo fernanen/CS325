@@ -5,7 +5,7 @@ def shopping(capacity,itemToView):
     result = []
     price = total = 0
     weight = items = 1
-    difference = -1
+    difference = 1
     global itemList
     global keyPairCap
     
@@ -107,7 +107,7 @@ for cases in range(numcases):
         keyPairCap[result] = [None] * cap
     #print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
     for shopper in range(len(family)):
-        finalShop = shopping(family[familyMember],numItems)
+        finalShop = shopping(family[familyMember],1)
         print("{}: --{}--").format(shopper,finalShop)
     #
     #with open('results.txt',"a+") as resultFile:
