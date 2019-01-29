@@ -28,16 +28,10 @@ def shopping(capacity,itemToView):
         tmp2=[]
         #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         #print("#############calling tmp1#############")
-        if (itemToView) <= 0: 
-            tmp1 = [0,""]
-        else:
-            tmp1 = shopping(capacity,(itemToView + difference))
+        tmp1 = shopping(capacity,(itemToView + difference))
         #print("tmp1: {}").format(tmp1)
         #print("##############calling tmp2############")
-        if (itemToView-1) <= 0: 
-            tmp2 = [0,""]
-        else:
-            tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView + difference))
+        tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView + difference))
         #print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
