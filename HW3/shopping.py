@@ -20,6 +20,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1###############3")
         tmp1 = shopping(itemList,capacity,(itemToView-1),keyPairCap)
+        print("tmp1: {}").format(tmp1)
         print("##############33calling tmp2############33")
         tmp2 =  shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
