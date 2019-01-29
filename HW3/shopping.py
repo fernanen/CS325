@@ -4,8 +4,8 @@ import re
 def shopping(capacity,itemToView):
     result = []
     price = total = 0
-    weight = items = -1
-    difference = 1
+    weight = items = 1
+    difference = -1
     global itemList
     global keyPairCap
     
