@@ -19,12 +19,17 @@ def shopping(capacity,itemToView):
         return result
     
     elif itemList[itemToView][weight] > capacity:
+        print("capacity is less than weight")
         result = shopping(capacity,(itemToView-1))
+    
     else:
         tmp2=[]
         #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1#############")
-        tmp1 = shopping(capacity,(itemToView-1))
+        if (itemToView) <= 0: 
+            tmp1 = [0,""]
+        else:
+            tmp1 = shopping(capacity,(itemToView-1))
         print("tmp1: {}").format(tmp1)
         print("##############calling tmp2############")
         if (itemToView-1) <= 0: 
