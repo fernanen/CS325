@@ -5,6 +5,7 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     result = []
     price = total = 0
     weight = items = 1
+    
     print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
         print("capacity is not NONE")
@@ -17,12 +18,14 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
     elif itemList[itemToView][weight] > capacity:
         result = shopping(itemList,capacity,(itemToView-1),keyPairCap)
     else:
+        tmp2=[]
         print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1###############3")
         tmp1 = shopping(itemList,capacity,(itemToView-1),keyPairCap)
         print("tmp1: {}").format(tmp1)
         print("##############33calling tmp2############33")
-        tmp2 =  shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
+        tmp2 = shopping(itemList,(capacity - itemList[itemToView][weight]),(itemToView-1),keyPairCap)
+        print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
