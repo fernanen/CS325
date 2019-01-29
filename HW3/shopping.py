@@ -116,12 +116,5 @@ for cases in range(numcases):
     resultFile.write("Total Price %s" % totalFam)
     resultFile.write("\nMember Items \n")
     for shopper in range(len(family)):
-        resultFile.write("%s:" % shopper)
+        resultFile.write("%s:    " % shopper)
         resultFile.write("%s\n" % result[shopper][weight])
-        #print("SHOPPER {}").format(family[familyMember])
-        #print("{}: --{}--").format(shopper,result[shopper])
-    #
-    #with open('results.txt',"a+") as resultFile:
-    #    for item in sortedList:
-    #        resultFile.write("%s " % item)
-    #    resultFile.write("\n")
