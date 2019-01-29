@@ -9,11 +9,12 @@ def shopping(capacity,itemToView,keyPairCap):
     
     print("capacity: {} itemtoview: {}").format(capacity,itemToView)
     if keyPairCap[itemToView][capacity] is not None:
-        #print("capacity is not NONE")
+        print("capacity is not NONE")
         return keyPairCap[itemToView][capacity]
 
     if capacity <= 0 or itemToView <= 0:
         result = [0,""]
+        print("RETURNING BASE CASE")
         return result
     
     elif itemList[itemToView][weight] > capacity:
