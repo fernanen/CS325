@@ -21,12 +21,16 @@ def shopping(capacity,itemToView):
     elif itemList[itemToView][weight] > capacity:
         result = shopping(capacity,(itemToView-1))
     else:
+        tmp2=[]
         #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
         print("#############calling tmp1#############")
         tmp1 = shopping(capacity,(itemToView-1))
         print("tmp1: {}").format(tmp1)
         print("##############calling tmp2############")
-        tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1))
+        if (itemToView-1) == 0: 
+            tmp2 = [0,""]
+        else:
+            tmp2 = shopping((capacity - itemList[itemToView][weight]),(itemToView-1))
         print("TMP2 : {}").format(tmp2)
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
