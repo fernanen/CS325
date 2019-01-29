@@ -19,8 +19,8 @@ def shopping(capacity,itemToView,keyPairCap):
     elif itemList[itemToView][weight] > capacity:
         result = shopping(capacity,(itemToView-1),keyPairCap)
     else:
-        print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
-        print("#############calling tmp1###############3")
+        #print ("itemToview: {} : price {} : itemList {}").format(itemToView,price,itemList)
+        print("#############calling tmp1#############")
         tmp1 = shopping(capacity,(itemToView-1),keyPairCap)
         print("tmp1: {}").format(tmp1)
         print("##############calling tmp2############")
