@@ -25,9 +25,12 @@ def shopping(itemList,capacity,itemToView,keyPairCap):
         print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
         tmp2[items] = tmp2[items].join(str(itemToView))
         print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
+        print("tmp1 price: {} , tmp2 price {}").format(tmp1[price],tmp2[price]) 
         if tmp1[total] < tmp2[total]:
+            print ("returing tmp1")
             return tmp1
         else:
+            print("returning tmp2")
             return tmp2
     
 
