@@ -60,7 +60,11 @@ numcases = myfile.readline()
 numcases = int(numcases)
 #print("number of cases: {}").format(numcases)
 
+resultFile = open('results.txt',"a+")
+
 for cases in range(numcases):
+    resultFile.write("Test Case " % (cases+1))
+    resultFile.write("\n")
     # Get number of items in each case
     numItems = myfile.readline()
     numItems = int(numItems)
@@ -82,9 +86,7 @@ for cases in range(numcases):
     #print("family Size: {}").format(familySize)
 
     #store family member capacity
-    family = [0] * familySize
-    
-
+    family = [0] * familySize  
 
     for familyMember in range(familySize):
         family[familyMember] = myfile.readline()
@@ -100,10 +102,11 @@ for cases in range(numcases):
     for result in range(len(keyPairCap)):
         keyPairCap[result] = [None] * cap
     #print ("{} x {}").format(len(keyPairCap),len(keyPairCap[0]))
+    result = [None] * familySize
     for shopper in range(len(family)):
-        finalShop = shopping(family[shopper],numItems)
+        result[shopper] = shopping(family[shopper],numItems)
         print("SHOPPER {}").format(family[familyMember])
-        print("{}: --{}--").format(shopper,finalShop)
+        print("{}: --{}--").format(shopper,result[shopper])
     #
     #with open('results.txt',"a+") as resultFile:
     #    for item in sortedList:
