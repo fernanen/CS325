@@ -41,7 +41,7 @@ def shopping(capacity,itemToView):
         tmp2[total] = tmp2[total] + itemList[itemToView][price]
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         #print ("tmp2 price: {} tmp2item {}").format(tmp2[price],tmp2[items])
-        tmp2[items] = tmp2[items].join(str(itemToView))
+        tmp2[items] += (str(itemToView))
         #print ("itemToview: {} : price {} : itemList {} ---tmp2:{}").format(itemToView,price,itemList,tmp2)
         #print("tmp1 price: {} , tmp2 price {}").format(tmp1[price],tmp2[price]) 
         if tmp1[total] > tmp2[total]:
