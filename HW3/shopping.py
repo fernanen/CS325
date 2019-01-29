@@ -113,7 +113,12 @@ for cases in range(numcases):
         totalFam += result[shopper][price]
         #print("SHOPPER {}").format(family[familyMember])
         #print("{}: --{}--").format(shopper,result[shopper])
-    print ("Total Price %s" % totalFam)
+    resultFile.write("Total Price %s" % totalFam)
+    resultFile.write("\nMember Items\n")
+    for shopper in range(len(family)):
+        resultFile.write("Total Price %s" % result[shopper][items])
+        #print("SHOPPER {}").format(family[familyMember])
+        #print("{}: --{}--").format(shopper,result[shopper])
     #
     #with open('results.txt',"a+") as resultFile:
     #    for item in sortedList:
