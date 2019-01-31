@@ -66,7 +66,7 @@ taskList = []
 taskList.insert(0,info[0][taskNumber])
 nextLatest = info[0][startTime]
 counter = 1 
-while nextLatest > 0 or counter < numberOfTasks:
+while nextLatest > 0 and counter < numberOfTasks:
     if info[counter][finishTime] <= nextLatest:
         nextLatest = info[counter][startTime]
         taskList.insert(0,info[counter][taskNumber])
