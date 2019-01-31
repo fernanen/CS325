@@ -50,9 +50,9 @@ for task in range(len(info)):
     info[task][startTime] = line_array[startTime]
     info[task][finishTime] = line_array[finishTime]
 
-    print "Before sorting info {}".format(info)
-    selection_sort(info)
-    print "after sorting Info {}".format(info)
+print "Before sorting info {}".format(info)
+selection_sort(info)
+print "after sorting Info {}".format(info)
 #
 #sort task information based on finishtime in decending order 
 #
