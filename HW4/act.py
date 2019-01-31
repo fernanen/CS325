@@ -12,7 +12,7 @@ def selection_sort(arr):
 
         # Place it at the front of the 
         # sorted end of the array
-        arr[minimum], arr[i] = arr[i], arr[minimum] 3 one liner swap
+        arr[minimum], arr[i] = arr[i], arr[minimum] # one liner swap
     return arr
 
 
