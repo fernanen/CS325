@@ -51,12 +51,29 @@ for task in range(len(info)):
     info[task][finishTime] = line_array[finishTime]
 
 print "Before sorting info {}".format(info)
-selection_sort(info)
-print "after sorting Info {}".format(info)
 #
 #sort task information based on finishtime in decending order 
 #
+selection_sort(info)
+print "after sorting Info {}".format(info)
 
+# create schedule 
+taskList = []
+
+#
+# Add first task to schedule
+#
+taskList.insert(0,info[0][taskNumber])
+nextLatest = info[0][startTime]
+counter = 1 
+while nextLatest > 0 or counter < numberOfTasks:
+    if info[counter][finishTime] <= nextLatest:
+        nextLatest = info[counter][startTime]
+        taskList.insert(0,info[counter][taskNumber])
+    counter = counter + 1 
+
+print ("Number of activities selected = {}").format(len(taskList))
+print ("tasks to run {}").format(taskList)
 
     #with open('merge.txt',"a+") as resultFile:
     #    for item in sortedList:
