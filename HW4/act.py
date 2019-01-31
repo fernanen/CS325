@@ -27,7 +27,7 @@ startTime= 1
 finishTime= 2
 case = 1
 with open(fileLocation) as myfile:
-    numberOfTasks = myfile.readline
+    numberOfTasks = myfile.readline()
     while not numberOfTasks:
         #get number of tasks
         numberOfTasks = int(numberOfTasks)
