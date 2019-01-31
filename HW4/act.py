@@ -43,7 +43,7 @@ print ("Number of tasks: {}").format(numberOfTasks)
 for row in range(len(info)):
     info[row] = [-1] * 3 # 3 being number of pieces of information given. 
 
-for task in range(info):
+for task in range(len(info):
     line = myfile.readline()
     line_array = list(map(int, line.split()))
     info[task][taskNumber] = line_array[taskNumber]
