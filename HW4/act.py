@@ -26,7 +26,7 @@ taskNumber = 0
 startTime= 1
 finishTime= 2
 case = 1
-with open(fileLocation,r) as myfile:
+with open(fileLocation) as myfile:
     #get number of tasks
     numberOfTasks = int(myfile.readline())
     
