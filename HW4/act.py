@@ -35,7 +35,7 @@ with open(fileLocation) as myfile:
         # initialize information array
         #
         info = [None] * (numberOfTasks)
-        print ("Number of tasks: {}").format(numberOfTasks)
+        #print ("Number of tasks: {}").format(numberOfTasks)
         for row in range(len(info)):
             info[row] = [-1] * 3 # 3 being number of pieces of information given. 
 
@@ -49,12 +49,12 @@ with open(fileLocation) as myfile:
             info[task][startTime] = line_array[startTime]
             info[task][finishTime] = line_array[finishTime]
 
-        print "Before sorting info {}".format(info)
+        #print "Before sorting info {}".format(info)
         #
         #sort task information based on finishtime in decending order 
         #
         selection_sort(info)
-        print "after sorting Info {}".format(info)
+        #print "after sorting Info {}".format(info)
 
         # create schedule 
         taskList = []
@@ -66,7 +66,7 @@ with open(fileLocation) as myfile:
         nextLatest = info[0][startTime]
         counter = 1 
         while nextLatest > 0 and counter < numberOfTasks:
-            print ("couter: {}").format(counter)
+            #print ("couter: {}").format(counter)
             if info[counter][finishTime] <= nextLatest:
                 nextLatest = info[counter][startTime]
                 taskList.insert(0,info[counter][taskNumber])
