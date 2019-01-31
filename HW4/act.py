@@ -27,9 +27,9 @@ startTime= 1
 finishTime= 2
 case = 1
 with open(fileLocation) as myfile:
+    print ("case #{}").format(case)
     #get number of tasks
     numberOfTasks = int(myfile.readline())
-    
     #
     # initialize information array
     #
