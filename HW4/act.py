@@ -74,6 +74,6 @@ with open(fileLocation) as myfile:
 
         print ("case {}").format(case)
         print ("Number of activities selected = {}").format(len(taskList))
-        print ("tasks to run {}").format(taskList)
+        print ("Activities: {}").format(taskList)
         case = case + 1
         numberOfTasks = myfile.readline()
